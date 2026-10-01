@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="mathGrad" x1="10" y1="10" x2="54" y2="54" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <filter id="mathShadow" x="6" y="8" width="52" height="52" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#1d4ed8" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Угольник / Чертежный треугольник -->
+  <g filter="url(#mathShadow)">
+    <path d="M12 50L52 50C53.6 50 54.5 48.1 53.4 47L15 8.6C13.9 7.5 12 8.4 12 10L12 50Z" fill="url(#mathGrad)"/>
+    <!-- Внутренний вырез угольника -->
+    <path d="M20 44L40 44C41.2 44 41.8 42.6 41 41.8L21.2 22C20.4 21.2 19 21.8 19 23L19 43C19 43.6 19.4 44 20 44Z" fill="#ffffff" fill-opacity="0.95"/>
+    <!-- Миллиметровые деления на линейке -->
+    <line x1="20" y1="47" x2="20" y2="50" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+    <line x1="26" y1="46" x2="26" y2="50" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+    <line x1="32" y1="47" x2="32" y2="50" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+    <line x1="38" y1="46" x2="38" y2="50" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+    <line x1="44" y1="47" x2="44" y2="50" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+    <!-- Значок деления и дроби внутри выреза -->
+    <circle cx="28" cy="29" r="2" fill="#1d4ed8"/>
+    <line x1="24" y1="34" x2="34" y2="34" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="30" cy="39" r="2" fill="#1d4ed8"/>
+  </g>
+</svg>

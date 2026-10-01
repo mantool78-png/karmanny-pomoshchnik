@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Карманный помощник — Шпаргалки для 6 класса</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Главный экран: выбор предметов -->
+    <section id="screen-home" class="screen" aria-label="Предметы">
+      <header class="app-header">
+        <div class="header-badge">
+          <span class="badge-dot"></span>
+          <span>6 класс • Экспресс-подготовка</span>
+        </div>
+        <h1 class="header-title">Карманный помощник</h1>
+        <p class="header-subtitle">Быстрые шпаргалки, понятные алгоритмы и мини-тесты для защиты проекта</p>
+      </header>
+
+      <div class="section-heading">
+        <h2>Выбери предмет</h2>
+        <span class="section-tag">4 темы</span>
+      </div>
+
+      <div id="subject-list" class="subject-grid"></div>
+
+      <footer class="home-footer">
+        <div class="footer-card">
+          <span class="footer-icon">⚡</span>
+          <div>
+            <strong>Работает автономно</strong>
+            <p>Без интернета и регистрации — идеально для демонстрации на уроке или защите.</p>
+          </div>
+        </div>
+      </footer>
+    </section>
+
+    <!-- Экран темы: карточка-шпаргалка -->
+    <section id="screen-topic" class="screen" hidden aria-label="Карточка темы">
+      <nav class="nav-bar">
+        <button type="button" class="btn-back" id="topic-home" aria-label="Назад к предметам">
+          <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          <span>Все предметы</span>
+        </button>
+      </nav>
+
+      <article class="topic-sheet">
+        <!-- Верхний баннер темы -->
+        <header class="topic-hero">
+          <div class="topic-hero__badge-row">
+            <span id="topic-subject" class="pill-badge"></span>
+            <span class="pill-meta">Шпаргалка</span>
+          </div>
+          <div class="topic-hero__main">
+            <div class="topic-hero__icon-wrap">
+              <img id="topic-icon" alt="" width="56" height="56">
+            </div>
+            <h2 id="topic-title" class="topic-hero__title"></h2>
+          </div>
+        </header>
+
+        <!-- Блок 1: Главное правило -->
+        <div class="info-card info-card--rule">
+          <div class="info-card__header">
+            <span class="info-card__icon">💡</span>
+            <h3>Главное правило</h3>
+          </div>
+          <p id="topic-rule" class="info-card__text"></p>
+        </div>
+
+        <!-- Блок 2: Пошаговый алгоритм -->
+        <div class="info-card info-card--steps">
+          <div class="info-card__header">
+            <span class="info-card__icon">⚡</span>
+            <h3>Пошаговый алгоритм</h3>
+          </div>
+          <ol id="topic-steps" class="step-list"></ol>
+        </div>
+
+        <!-- Блок 3: Пример -->
+        <div class="info-card info-card--example">
+          <div class="info-card__header">
+            <span class="info-card__icon">✅</span>
+            <h3>Пример с разбором</h3>
+          </div>
+          <p id="topic-example" class="info-card__text"></p>
+        </div>
+
+        <!-- Блок 4: Частая ошибка / Ловушка -->
+        <div class="info-card info-card--mistake">
+          <div class="info-card__header">
+            <span class="info-card__icon">⚠️</span>
+            <h3>Ловушка (частая ошибка)</h3>
+          </div>
+          <p id="topic-mistake" class="info-card__text"></p>
+        </div>
+
+        <!-- Кнопка перехода к тесту -->
+        <div class="action-footer">
+          <button type="button" class="btn-action" id="to-test">
+            <span>Закрепить тему в тесте</span>
+            <svg class="icon-arrow-next" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+      </article>
+    </section>
+
+    <!-- Экран теста -->
+    <section id="screen-test" class="screen" hidden aria-label="Мини-тест">
+      <nav class="nav-bar">
+        <button type="button" class="btn-back" id="test-topic">
+          <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          <span>К шпаргалке</span>
+        </button>
+        <button type="button" class="btn-back btn-back--subtle" id="test-home">Все предметы</button>
+      </nav>
+
+      <article class="test-sheet">
+        <header class="test-header">
+          <div class="test-meta">
+            <span id="test-kicker" class="pill-badge"></span>
+            <span class="test-step-badge">Вопрос 1 из 1</span>
+          </div>
+          <h2 class="test-title">Проверь себя</h2>
+          <p id="test-question" class="test-question"></p>
+        </header>
+
+        <div class="test-body">
+          <div id="test-options" class="options-group"></div>
+          <p id="test-hint" class="test-hint" aria-live="polite"></p>
+          <button type="button" class="btn-action" id="check-answer">
+            <span>Проверить ответ</span>
+          </button>
+        </div>
+
+        <!-- Блок результата и объяснения -->
+        <div id="test-result" class="result-banner" hidden>
+          <div class="result-badge-row">
+            <span class="result-icon-circle"></span>
+            <h3 id="result-title" class="result-title"></h3>
+          </div>
+          <p id="result-text" class="result-text"></p>
+          <div class="result-actions">
+            <button type="button" class="btn-secondary" id="result-topic">Вернуться к теме</button>
+            <button type="button" class="btn-secondary btn-secondary--home" id="result-home">На главную</button>
+          </div>
+        </div>
+      </article>
+    </section>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

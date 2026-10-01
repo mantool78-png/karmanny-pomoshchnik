@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="geoGrad" x1="14" y1="12" x2="50" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#fb923c"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+    <filter id="geoShadow" x="6" y="8" width="52" height="52" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#ea580c" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#geoShadow)">
+    <!-- Глобус на подставке -->
+    <!-- Круг земли -->
+    <circle cx="32" cy="28" r="16" fill="url(#geoGrad)"/>
+    
+    <!-- Параллели (широта) -->
+    <ellipse cx="32" cy="28" rx="16" ry="6.5" stroke="#ffffff" stroke-width="1.8" fill="none"/>
+    <line x1="16" y1="28" x2="48" y2="28" stroke="#ffffff" stroke-width="2" stroke-dasharray="2 2"/>
+    
+    <!-- Меридианы (долгота) -->
+    <ellipse cx="32" cy="28" rx="7.5" ry="16" stroke="#ffffff" stroke-width="1.8" fill="none"/>
+    <line x1="32" y1="12" x2="32" y2="44" stroke="#ffffff" stroke-width="2"/>
+
+    <!-- Дуга меридиана подставки -->
+    <path d="M46 16C50 20 52 26 50 34C48 41 42 47 34 49" stroke="#9a3412" stroke-width="2.5" stroke-linecap="round"/>
+    
+    <!-- Основание и ножка глобуса -->
+    <path d="M32 44V54" stroke="#9a3412" stroke-width="3" stroke-linecap="round"/>
+    <path d="M22 54H42" stroke="#9a3412" stroke-width="3" stroke-linecap="round"/>
+  </g>
+</svg>

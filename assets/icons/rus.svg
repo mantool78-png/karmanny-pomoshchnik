@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="rusGrad" x1="12" y1="12" x2="52" y2="52" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#6d28d9"/>
+    </linearGradient>
+    <filter id="rusShadow" x="6" y="8" width="52" height="52" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#6d28d9" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#rusShadow)">
+    <!-- Раскрытая книга -->
+    <!-- Левая страница -->
+    <path d="M32 46C26 42 18 42 12 44V16C18 14 26 14 32 18V46Z" fill="#ffffff"/>
+    <path d="M32 46C26 42 18 42 12 44V16C18 14 26 14 32 18V46Z" stroke="url(#rusGrad)" stroke-width="2.5" stroke-linejoin="round"/>
+    <!-- Правая страница -->
+    <path d="M32 46C38 42 46 42 52 44V16C46 14 38 14 32 18V46Z" fill="url(#rusGrad)"/>
+    <path d="M32 46C38 42 46 42 52 44V16C46 14 38 14 32 18V46Z" stroke="url(#rusGrad)" stroke-width="2.5" stroke-linejoin="round"/>
+    
+    <!-- Строчки текста на левой странице -->
+    <line x1="17" y1="22" x2="27" y2="22" stroke="#7c3aed" stroke-width="2" stroke-linecap="round"/>
+    <line x1="17" y1="28" x2="27" y2="28" stroke="#a78bfa" stroke-width="2" stroke-linecap="round"/>
+    <line x1="17" y1="34" x2="24" y2="34" stroke="#a78bfa" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Закладка или перо справа -->
+    <line x1="37" y1="22" x2="47" y2="22" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+    <line x1="37" y1="28" x2="47" y2="28" stroke="#ede9fe" stroke-width="2" stroke-linecap="round"/>
+    <line x1="37" y1="34" x2="43" y2="34" stroke="#ede9fe" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Буква "А" как символ грамотности и правил -->
+    <circle cx="48" cy="14" r="8" fill="#fbbf24"/>
+    <path d="M48 10L45 18H47L47.5 16.5H48.5L49 18H51L48 10ZM48 12.5L48.2 15H47.8L48 12.5Z" fill="#78350f" font-weight="bold"/>
+  </g>
+</svg>
