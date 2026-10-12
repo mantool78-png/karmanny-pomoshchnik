@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>100 блоков — проценты</title>
+  <meta name="description" content="Проценты на примере блочного мира, заряда телефона и игрового магазина. Интерактивно и наглядно.">
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+  <canvas id="world" aria-label="Летающий остров из 100 блоков"></canvas>
+  <div id="labels" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="logo" href="#top"><span class="logo-cube"></span><span>100 блоков</span></a>
+    <div class="xp" title="Сколько страницы ты уже прошёл — тоже в процентах">
+      <span class="pix">XP</span>
+      <div class="xp-bar"><i></i></div>
+      <span class="pix xp-pct">0 %</span>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" data-state="hero">
+      <p class="kicker pix reveal">математика</p>
+      <h1>Проценты</h1>
+      <p class="h1-sub reveal">собираем по&nbsp;блоку</p>
+      <p class="lead reveal">Проценты повсюду: заряд телефона, скидки на&nbsp;скины, загрузка игры. Разберёмся на&nbsp;острове из&nbsp;100&nbsp;блоков — без&nbsp;зубрёжки, всё видно своими глазами.</p>
+      <div class="scroll-hint reveal"><span class="pix">листай вниз</span><i></i></div>
+    </section>
+
+    <!-- ГЛАВА 1 -->
+    <section class="chapter" id="ch1">
+      <div class="step chapter-title" data-state="count">
+        <span class="pix ch-num">Глава 1</span>
+        <h2>Один блок — один процент</h2>
+      </div>
+
+      <div class="step" data-state="count">
+        <article class="card">
+          <p class="reveal">Перед тобой площадка. Посчитаем блоки: <b>10&nbsp;рядов по&nbsp;10&nbsp;штук</b>.</p>
+          <p class="counter reveal"><span id="counter" class="pix">0</span><small>блоков</small></p>
+          <p class="reveal">Всего <b>100</b>. Запомни это число: на нём держится вся тема.</p>
+        </article>
+      </div>
+
+      <div class="step" data-state="one">
+        <article class="card">
+          <p class="reveal">Слово «процент» пришло из латыни: <i>pro centum</i> значит «из сотни».</p>
+          <p class="reveal">Один блок из ста — это и есть <b>1&nbsp;%</b>.</p>
+          <p class="chip pix reveal">1 блок = 1 из 100 = 1 %</p>
+        </article>
+      </div>
+
+      <div class="step" data-state="seven">
+        <article class="card">
+          <p class="reveal">Поставим семь блоков. Это 7&nbsp;из&nbsp;100, значит <b>7&nbsp;%</b>.</p>
+          <p class="reveal">Вот и весь секрет: процент показывает, <b>сколько штук из каждых ста</b>.</p>
+          <p class="chip pix reveal">7 из 100 = 7 %</p>
+        </article>
+      </div>
+
+      <div class="step" data-state="play">
+        <article class="card console" id="play">
+          <div class="console-head reveal">
+            <span class="pix tag">Песочница</span>
+            <span class="hint">двигай ползунок или тыкай прямо в&nbsp;блоки на&nbsp;площадке</span>
+          </div>
+          <div class="readout-big reveal"><span id="pv" class="pix">0</span><span class="pix pct">%</span></div>
+          <dl class="readouts reveal">
+            <div><dt>Блоков</dt><dd id="pBlocks"></dd></div>
+            <div><dt>Дробь</dt><dd id="pFrac"></dd></div>
+            <div><dt>Десятичная</dt><dd id="pDec"></dd></div>
+          </dl>
+          <div class="slider-row reveal">
+            <button class="pxbtn" data-delta="-1" aria-label="Убрать один блок">−</button>
+            <input type="range" id="pSlider" min="0" max="100" value="37" aria-label="Сколько процентов">
+            <button class="pxbtn" data-delta="1" aria-label="Добавить один блок">+</button>
+          </div>
+          <div class="quest reveal" id="quest">
+            <div class="quest-head"><span class="pix tag gold">Задание</span><span class="pix" id="questStep"></span></div>
+            <p id="questText"></p>
+            <button class="pxbtn wide" id="questNext" hidden>Следующее задание</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ГЛАВА 2 -->
+    <section class="chapter right" id="ch2">
+      <div class="step chapter-title" data-state="full">
+        <span class="pix ch-num">Глава 2</span>
+        <h2>Проценты, которые узнаёшь в лицо</h2>
+        <p class="lead">Некоторые проценты встречаются так часто, что их надо узнавать сразу, как заряд на&nbsp;своём телефоне.</p>
+      </div>
+
+      <div class="step" data-state="full">
+        <article class="card">
+          <div class="phonebar reveal"><span class="pix">16:20</span><span class="pb-right"><span class="pix pb-pct">100 %</span><span class="battery"><i></i></span></span></div>
+          <h3 class="reveal"><span class="pix big">100 %</span> — это всё целиком</h3>
+          <p class="reveal">Вся площадка, полный заряд, скин по&nbsp;полной цене.</p>
+          <p class="chip pix reveal">100 % = всё = 1</p>
+          <p class="example reveal">100&nbsp;% от&nbsp;250&nbsp;монет — это все 250&nbsp;монет.</p>
+        </article>
+      </div>
+
+      <div class="step" data-state="half">
+        <article class="card">
+          <div class="phonebar reveal"><span class="pix">16:20</span><span class="pb-right"><span class="pix pb-pct">50 %</span><span class="battery"><i></i></span></span></div>
+          <h3 class="reveal"><span class="pix big">50 %</span> — ровно половина</h3>
+          <p class="rule reveal">Найти 50&nbsp;% — значит <b>разделить на&nbsp;2</b>.</p>
+          <p class="example reveal">50&nbsp;% от&nbsp;80&nbsp;монет → 80&nbsp;:&nbsp;2 = <b>40&nbsp;монет</b></p>
+          <p class="reveal muted">А вторая половина? Тоже 50&nbsp;%. Вместе — 100&nbsp;%.</p>
+        </article>
+      </div>
+
+      <div class="step" data-state="quarter">
+        <article class="card">
+          <div class="phonebar reveal"><span class="pix">16:20</span><span class="pb-right"><span class="pix pb-pct">25 %</span><span class="battery"><i></i></span></span></div>
+          <h3 class="reveal"><span class="pix big">25 %</span> — четверть</h3>
+          <p class="reveal">Это половина от&nbsp;половины: квадрат 5&nbsp;на&nbsp;5 в&nbsp;углу.</p>
+          <p class="rule reveal">Найти 25&nbsp;% — <b>раздели на&nbsp;4</b>.</p>
+          <p class="example reveal">25&nbsp;% от&nbsp;200&nbsp;монет → 200&nbsp;:&nbsp;4 = <b>50&nbsp;монет</b></p>
+        </article>
+      </div>
+
+      <div class="step" data-state="tenth">
+        <article class="card">
+          <div class="phonebar reveal"><span class="pix">16:20</span><span class="pb-right"><span class="pix pb-pct">10 %</span><span class="battery"><i></i></span></span></div>
+          <div class="toast reveal"><span class="pix">!</span> Низкий заряд. Подключите зарядное устройство.</div>
+          <h3 class="reveal"><span class="pix big">10 %</span> — один ряд из&nbsp;десяти</h3>
+          <p class="rule reveal">Найти 10&nbsp;% — <b>раздели на&nbsp;10</b>.</p>
+          <p class="example reveal">10&nbsp;% от&nbsp;300 → 300&nbsp;:&nbsp;10 = <b>30</b>. Просто убрали нолик!</p>
+        </article>
+      </div>
+
+      <div class="step" data-state="onepct">
+        <article class="card">
+          <div class="phonebar reveal"><span class="pix">16:20</span><span class="pb-right"><span class="pix pb-pct">1 %</span><span class="battery"><i></i></span></span></div>
+          <h3 class="reveal"><span class="pix big">1 %</span> — один блок из&nbsp;ста</h3>
+          <p class="rule reveal">Найти 1&nbsp;% — <b>раздели на&nbsp;100</b>.</p>
+          <p class="example reveal">1&nbsp;% от&nbsp;500&nbsp;подписчиков → 500&nbsp;:&nbsp;100 = <b>5</b></p>
+        </article>
+      </div>
+
+    </section>
+
+    <!-- БОНУС-УРОВЕНЬ: неудобные проценты -->
+    <section class="chapter" id="bonus">
+      <div class="step chapter-title" data-state="awk">
+        <span class="pix ch-num">Бонус-уровень</span>
+        <h2>Неудобные проценты</h2>
+        <p class="lead">Что делать, если процент не&nbsp;50, не&nbsp;25 и&nbsp;не&nbsp;10? Собрать его из&nbsp;кусочков, как постройку из&nbsp;блоков.</p>
+      </div>
+
+      <div class="step" data-state="awk">
+        <article class="card">
+          <h3 class="reveal">Почему процент бывает «неудобным»?</h3>
+          <p class="reveal">Удобные проценты ты уже знаешь. Каждый считается <b>одним делением</b>:</p>
+          <ul class="easy reveal">
+            <li><span class="pix">50 %</span>: 2</li>
+            <li><span class="pix">25 %</span>: 4</li>
+            <li><span class="pix">10 %</span>: 10</li>
+            <li><span class="pix">1 %</span>: 100</li>
+          </ul>
+          <p class="reveal">А вот 75&nbsp;%, 35&nbsp;% или 37&nbsp;% одним делением не&nbsp;посчитать. Вот они и&nbsp;«неудобные».</p>
+          <p class="example reveal">Секрет: любой неудобный процент <b>складывается из&nbsp;удобных</b>. Каждый кусочек считаем отдельно, а&nbsp;потом складываем.</p>
+        </article>
+      </div>
+
+      <div class="step" data-state="b75">
+        <article class="card">
+          <h3 class="reveal"><span class="pix big">75 %</span> = 50 % + 25 %</h3>
+          <p class="reveal">Скидка 75&nbsp;% на&nbsp;скин за&nbsp;<b>80&nbsp;монет</b>. Сколько монет сэкономишь? Строим по&nbsp;кусочкам:</p>
+          <ol class="calc reveal">
+            <li><span class="pix piece">50 %</span><span>половина: 80&nbsp;:&nbsp;2 = <b>40</b></span></li>
+            <li><span class="pix piece">25 %</span><span>четверть: 80&nbsp;:&nbsp;4 = <b>20</b></span></li>
+            <li class="total"><span class="pix piece">75 %</span><span>40 + 20 = <b>60&nbsp;монет</b></span></li>
+          </ol>
+          <button class="replay pix reveal" type="button">Ещё раз</button>
+        </article>
+      </div>
+
+      <div class="step" data-state="b30">
+        <article class="card">
+          <h3 class="reveal"><span class="pix big">30 %</span> = 10 % + 10 % + 10 %</h3>
+          <p class="reveal">В игре <b>300 игроков</b>. 30&nbsp;% из&nbsp;них в&nbsp;твоей команде. Сколько это человек? Кладём по&nbsp;одному ряду:</p>
+          <ol class="calc reveal">
+            <li><span class="pix piece">10 %</span><span>один ряд: 300&nbsp;:&nbsp;10 = <b>30</b></span></li>
+            <li><span class="pix piece">20 %</span><span>два ряда: 30 + 30 = <b>60</b></span></li>
+            <li class="total"><span class="pix piece">30 %</span><span>три ряда: 30 + 30 + 30 = <b>90&nbsp;игроков</b></span></li>
+          </ol>
+          <p class="reveal muted small">Кстати, 20&nbsp;% — это пятая часть: 300&nbsp;:&nbsp;5 = 60. Ответ тот&nbsp;же, просто через 10&nbsp;% легче считать в&nbsp;уме.</p>
+          <button class="replay pix reveal" type="button">Ещё раз</button>
+        </article>
+      </div>
+
+      <div class="step" data-state="b35">
+        <article class="card">
+          <h3 class="reveal"><span class="pix big">35 %</span> = 10 + 10 + 10 + 5</h3>
+          <p class="reveal">Новый кусочек: <b>5&nbsp;% — это половина от&nbsp;10&nbsp;%</b>, то есть полряда. Найдём 35&nbsp;% от&nbsp;<b>200&nbsp;монет</b>:</p>
+          <ol class="calc reveal">
+            <li><span class="pix piece">10 %</span><span>200&nbsp;:&nbsp;10 = <b>20</b></span></li>
+            <li><span class="pix piece">30 %</span><span>20 + 20 + 20 = <b>60</b></span></li>
+            <li><span class="pix piece">5 %</span><span>половина от&nbsp;20 = <b>10</b></span></li>
+            <li class="total"><span class="pix piece">35 %</span><span>60 + 10 = <b>70&nbsp;монет</b></span></li>
+          </ol>
+          <button class="replay pix reveal" type="button">Ещё раз</button>
+        </article>
+      </div>
+
+      <div class="step" data-state="b90">
+        <article class="card">
+          <h3 class="reveal"><span class="pix big">90 %</span> = 100 % − 10 %</h3>
+          <p class="reveal">Иногда проще не&nbsp;строить, а&nbsp;<b>убрать лишнее</b>. Берём всё и&nbsp;снимаем один ряд. 90&nbsp;% от&nbsp;<b>50&nbsp;монет</b>:</p>
+          <ol class="calc reveal">
+            <li><span class="pix piece">100 %</span><span>всё целиком = <b>50</b></span></li>
+            <li><span class="pix piece">10 %</span><span>убираем: 50&nbsp;:&nbsp;10 = <b>5</b></span></li>
+            <li class="total"><span class="pix piece">90 %</span><span>50 − 5 = <b>45&nbsp;монет</b></span></li>
+          </ol>
+          <p class="reveal muted small">Так же 99&nbsp;% от&nbsp;300: 300 − 3 = 297. Без столбиков!</p>
+          <button class="replay pix reveal" type="button">Ещё раз</button>
+        </article>
+      </div>
+
+      <div class="step" data-state="b37">
+        <article class="card">
+          <h3 class="reveal">Суперприём: через 1&nbsp;%</h3>
+          <p class="reveal">Если кусочки не&nbsp;собираются, есть способ для&nbsp;<b>любого</b> процента. Найди один блок и&nbsp;умножь. 37&nbsp;% от&nbsp;<b>300&nbsp;монет</b>:</p>
+          <ol class="calc reveal">
+            <li><span class="pix piece">1 %</span><span>один блок: 300&nbsp;:&nbsp;100 = <b>3</b></span></li>
+            <li class="total"><span class="pix piece">37 %</span><span>37 блоков по&nbsp;3: 37 × 3 = <b>111&nbsp;монет</b></span></li>
+          </ol>
+          <p class="chip pix reveal">сначала 1 %, потом × сколько надо</p>
+          <button class="replay pix reveal" type="button">Ещё раз</button>
+        </article>
+      </div>
+
+      <div class="step" data-state="craft">
+        <article class="card console" id="craft">
+          <div class="console-head reveal">
+            <span class="pix tag">Мастерская</span>
+            <span class="pix" id="craftStep"></span>
+          </div>
+          <p class="craft-task reveal" id="craftTask"></p>
+          <div class="craft-sum reveal">
+            <span class="pix" id="craftPct">0 %</span>
+            <span class="craft-goal">цель: <b class="pix" id="craftGoal"></b></span>
+          </div>
+          <div class="craft-lines reveal">
+            <p id="craftFormula"></p>
+            <p id="craftCoins"></p>
+          </div>
+          <div class="pieces reveal">
+            <button class="pxbtn" data-piece="50" type="button">50 %</button>
+            <button class="pxbtn" data-piece="25" type="button">25 %</button>
+            <button class="pxbtn" data-piece="10" type="button">10 %</button>
+            <button class="pxbtn" data-piece="5" type="button">5 %</button>
+            <button class="pxbtn" data-piece="1" type="button">1 %</button>
+            <button class="pxbtn undo" id="craftUndo" type="button" aria-label="Убрать последний кусочек">Убрать</button>
+          </div>
+          <button class="pxbtn wide" id="craftNext" type="button" hidden>Следующее задание</button>
+        </article>
+      </div>
+
+      <div class="step" data-state="quiz">
+        <article class="card console" data-quiz="quiz">
+          <div class="console-head reveal">
+            <span class="pix tag gold">Проверь себя</span>
+            <span class="pix q-step"></span>
+          </div>
+          <div class="q-body"></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ГЛАВА 3 -->
+    <section class="chapter right" id="ch3">
+      <div class="step chapter-title" data-state="shop">
+        <span class="pix ch-num">Глава 3</span>
+        <h2>Магазин скинов</h2>
+        <p class="lead">Скидки и&nbsp;наценки — тоже проценты. Главное правило магазина: <b>старая цена — это всегда 100&nbsp;%</b>.</p>
+      </div>
+
+      <div class="step" data-state="shop">
+        <article class="card">
+          <div class="shop-item reveal">
+            <svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><use href="#i-sword"/></svg>
+            <div class="si-text"><span class="si-name">Скин «Золотой меч»</span><span class="si-price pix">400</span></div>
+          </div>
+          <h3 class="reveal">Цена — это 100&nbsp;%</h3>
+          <p class="reveal">Весь остров — это цена меча: <b>100&nbsp;блоков = 400&nbsp;монет</b>.</p>
+          <p class="rule reveal">Значит, один блок (1&nbsp;%) стоит 400&nbsp;:&nbsp;100 = <b>4&nbsp;монеты</b>.</p>
+        </article>
+      </div>
+
+      <div class="step" data-state="sale">
+        <article class="card">
+          <div class="shop-item reveal">
+            <svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><use href="#i-sword"/></svg>
+            <div class="si-text"><span class="si-name">Скин «Золотой меч»</span><span class="si-price pix"><s>400</s> 320</span></div>
+            <span class="si-badge pix">-20 %</span>
+          </div>
+          <h3 class="reveal">Скидка 20&nbsp;%</h3>
+          <p class="reveal">Скидка <b>отрезает кусок</b> от&nbsp;цены. Отрезаем 20&nbsp;% — два ряда блоков:</p>
+          <ol class="calc reveal">
+            <li><span class="pix piece">100 %</span><span>цена до скидки = <b>400</b></span></li>
+            <li><span class="pix piece">20 %</span><span>скидка: 10&nbsp;% = 40, значит 20&nbsp;% = <b>80</b></span></li>
+            <li class="total"><span class="pix piece">80 %</span><span>платишь: 400 − 80 = <b>320&nbsp;монет</b></span></li>
+          </ol>
+          <p class="reveal muted small">Можно и&nbsp;короче: при скидке 20&nbsp;% ты платишь 100 − 20 = 80&nbsp;% цены.</p>
+          <button class="replay pix reveal" type="button">Ещё раз</button>
+        </article>
+      </div>
+
+      <div class="step" data-state="markup">
+        <article class="card">
+          <div class="shop-item reveal">
+            <svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><use href="#i-sword"/></svg>
+            <div class="si-text"><span class="si-name">Скин «Огненный меч»</span><span class="si-price pix"><s>200</s> 250</span></div>
+            <span class="si-badge up pix">+25 %</span>
+          </div>
+          <h3 class="reveal">Наценка 25&nbsp;%</h3>
+          <p class="reveal">Наценка — наоборот: <b>цена растёт</b>. Новые блоки не&nbsp;влезают на&nbsp;остров и&nbsp;встают вторым этажом.</p>
+          <ol class="calc reveal">
+            <li><span class="pix piece">100 %</span><span>старая цена = <b>200</b></span></li>
+            <li><span class="pix piece">25 %</span><span>наценка: 200&nbsp;:&nbsp;4 = <b>50</b></span></li>
+            <li class="total"><span class="pix piece">125 %</span><span>новая цена: 200 + 50 = <b>250&nbsp;монет</b></span></li>
+          </ol>
+          <p class="reveal muted small">Цена стала больше 100&nbsp;%: 100&nbsp;% + 25&nbsp;% = 125&nbsp;% от&nbsp;старой.</p>
+          <button class="replay pix reveal" type="button">Ещё раз</button>
+        </article>
+      </div>
+
+      <div class="step" data-state="pricelab">
+        <article class="card console" id="pricelab">
+          <div class="console-head reveal">
+            <span class="pix tag">Ценник</span>
+            <span class="hint">двигай ползунок: влево — скидка, вправо — наценка</span>
+          </div>
+          <div class="shop-item reveal">
+            <svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><use href="#i-sword"/></svg>
+            <div class="si-text"><span class="si-name">Скин за&nbsp;200&nbsp;монет</span><span class="si-price pix" id="plPrice">200</span></div>
+            <span class="si-badge pix" id="plBadge">0 %</span>
+          </div>
+          <p class="pl-line reveal" id="plLine"></p>
+          <div class="slider-row reveal">
+            <button class="pxbtn" data-pl="-5" type="button" aria-label="Меньше на 5 процентов">−</button>
+            <input type="range" id="plSlider" class="two-way" min="-50" max="50" step="5" value="0" aria-label="Скидка или наценка в процентах">
+            <button class="pxbtn" data-pl="5" type="button" aria-label="Больше на 5 процентов">+</button>
+          </div>
+          <div class="quest reveal" data-quest="pricelab">
+            <div class="quest-head"><span class="pix tag gold">Задание</span><span class="pix q-step"></span></div>
+            <p class="q-text"></p>
+            <button class="pxbtn wide q-next" type="button" hidden>Следующее задание</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ГЛАВА 4 -->
+    <section class="chapter" id="ch4">
+      <div class="step chapter-title" data-state="load">
+        <span class="pix ch-num">Глава 4</span>
+        <h2>Сколько это процентов?</h2>
+        <p class="lead">Раньше мы знали процент и&nbsp;искали часть. Теперь наоборот: <b>знаем часть — ищем процент</b>. Секрет один: разложи остров на&nbsp;равные куски.</p>
+      </div>
+
+      <div class="step" data-state="load">
+        <article class="card">
+          <h3 class="reveal">Процент — это «сколько из&nbsp;100»</h3>
+          <div class="loadbar reveal" id="loadbar"><i></i><span class="pix">0 %</span></div>
+          <p class="reveal">Игра весит <b>100&nbsp;МБ</b>, и&nbsp;каждый мегабайт — один блок острова.</p>
+          <ol class="calc reveal">
+            <li><span class="pix piece">37 МБ</span><span>скачано 37 из&nbsp;100 → загорелось <b>37&nbsp;блоков</b></span></li>
+            <li class="total"><span class="pix piece">37 %</span><span>37 блоков из&nbsp;100 = <b>37&nbsp;%</b></span></li>
+          </ol>
+          <p class="rule reveal">Когда всего ровно 100, считать ничего не&nbsp;надо: сколько есть — столько и&nbsp;процентов. А&nbsp;если всего не&nbsp;100? Листай дальше.</p>
+          <button class="replay pix reveal" type="button">Ещё раз</button>
+        </article>
+      </div>
+
+      <div class="step" data-state="chests">
+        <article class="card">
+          <h3 class="reveal">4 сундука</h3>
+          <div class="chests reveal" id="chests"><i></i><i></i><i></i><i></i></div>
+          <p class="reveal">На&nbsp;уровне <b>4&nbsp;сундука</b>. Это не&nbsp;100, поэтому раскладываем остров на&nbsp;4&nbsp;равных куска — по&nbsp;куску на&nbsp;сундук.</p>
+          <ol class="calc reveal">
+            <li><span class="pix piece">1 сундук</span><span>100 блоков&nbsp;:&nbsp;4 = <b>25&nbsp;блоков</b> в&nbsp;каждом куске</span></li>
+            <li><span class="pix piece">открыл 1</span><span>горит 1 кусок = 25 блоков = <b>25&nbsp;%</b></span></li>
+            <li class="total"><span class="pix piece">открыл 3</span><span>3 куска × 25 = 75 блоков = <b>75&nbsp;%</b></span></li>
+          </ol>
+          <button class="replay pix reveal" type="button">Ещё раз</button>
+        </article>
+      </div>
+
+      <div class="step" data-state="test20">
+        <article class="card">
+          <h3 class="reveal">Оценка за&nbsp;тест</h3>
+          <p class="reveal">В тесте <b>20&nbsp;вопросов</b>, верно — <b>17</b>. Всё то&nbsp;же самое, только кусков больше: <b>20&nbsp;полосок</b>, по&nbsp;одной на&nbsp;вопрос.</p>
+          <ol class="calc reveal">
+            <li><span class="pix piece">1 вопрос</span><span>100 блоков&nbsp;:&nbsp;20 = <b>5&nbsp;блоков</b> в&nbsp;каждой полоске</span></li>
+            <li><span class="pix piece">17 верных</span><span>17 полосок × 5 = <b>85&nbsp;блоков</b></span></li>
+            <li class="total"><span class="pix piece">85 %</span><span>85 блоков из&nbsp;100 = <b>85&nbsp;%</b></span></li>
+          </ol>
+          <button class="replay pix reveal" type="button">Ещё раз</button>
+        </article>
+      </div>
+
+      <div class="step" data-state="recipe">
+        <article class="card">
+          <h3 class="reveal">Рецепт в&nbsp;3&nbsp;шага</h3>
+          <p class="reveal">Собрал <b>3&nbsp;звезды</b> из&nbsp;<b>5</b>. Сколько процентов?</p>
+          <ol class="calc reveal">
+            <li><span class="pix piece">шаг 1</span><span>всего 5 → режем остров на&nbsp;<b>5&nbsp;кусков</b></span></li>
+            <li><span class="pix piece">шаг 2</span><span>в&nbsp;одном куске 100&nbsp;:&nbsp;5 = <b>20&nbsp;блоков</b></span></li>
+            <li class="total"><span class="pix piece">шаг 3</span><span>собрал 3 → 3 × 20 = 60 блоков = <b>60&nbsp;%</b></span></li>
+          </ol>
+          <p class="reveal small">Шпаргалка: блоков в&nbsp;одном куске</p>
+          <ul class="easy tight reveal">
+            <li><span class="pix">из 2</span>50</li>
+            <li><span class="pix">из 4</span>25</li>
+            <li><span class="pix">из 5</span>20</li>
+            <li><span class="pix">из 10</span>10</li>
+            <li><span class="pix">из 20</span>5</li>
+            <li><span class="pix">из 25</span>4</li>
+            <li><span class="pix">из 50</span>2</li>
+            <li><span class="pix">из 100</span>1</li>
+          </ul>
+          <p class="reveal muted small">Короче, для тех, кто хочет: часть&nbsp;:&nbsp;всего × 100. 3&nbsp;:&nbsp;5 × 100 = 60&nbsp;%.</p>
+          <button class="replay pix reveal" type="button">Ещё раз</button>
+        </article>
+      </div>
+
+      <div class="step" data-state="finder">
+        <article class="card console" id="finder">
+          <div class="console-head reveal">
+            <span class="pix tag">Процентомер</span>
+            <span class="hint">выбери, сколько всего, и&nbsp;сколько из&nbsp;них</span>
+          </div>
+          <p class="fd-label reveal">Сколько всего:</p>
+          <div class="totals reveal">
+            <button class="pxbtn" data-total="2" type="button">2</button>
+            <button class="pxbtn" data-total="4" type="button">4</button>
+            <button class="pxbtn" data-total="5" type="button">5</button>
+            <button class="pxbtn" data-total="10" type="button">10</button>
+            <button class="pxbtn" data-total="20" type="button">20</button>
+            <button class="pxbtn" data-total="25" type="button">25</button>
+            <button class="pxbtn" data-total="50" type="button">50</button>
+          </div>
+          <div class="fd-row reveal">
+            <span class="fd-label">Сколько из&nbsp;них:</span>
+            <button class="pxbtn" data-part="-1" type="button" aria-label="Меньше">−</button>
+            <span class="pix fd-part" id="fdPart">0</span>
+            <button class="pxbtn" data-part="1" type="button" aria-label="Больше">+</button>
+          </div>
+          <div class="craft-lines reveal">
+            <p id="fdFormula"></p>
+            <p id="fdResult"></p>
+          </div>
+          <div class="quest reveal" data-quest="finder">
+            <div class="quest-head"><span class="pix tag gold">Задание</span><span class="pix q-step"></span></div>
+            <p class="q-text"></p>
+            <button class="pxbtn wide q-next" type="button" hidden>Следующее задание</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ГЛАВА 5 -->
+    <section class="chapter right" id="ch5">
+      <div class="step chapter-title" data-state="trapq">
+        <span class="pix ch-num">Глава 5</span>
+        <h2>Ловушка процентов</h2>
+        <p class="lead">Цену подняли на&nbsp;20&nbsp;%, а&nbsp;потом снизили на&nbsp;20&nbsp;%. Вернулась прежняя? Проверим блоками.</p>
+      </div>
+
+      <div class="step" data-state="trapq">
+        <article class="card">
+          <div class="shop-item reveal">
+            <svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><use href="#i-sword"/></svg>
+            <div class="si-text"><span class="si-name">Скин «Меч героя»</span><span class="si-price pix">100</span></div>
+          </div>
+          <h3 class="reveal">Как думаешь?</h3>
+          <p class="reveal">Меч стоил <b>100&nbsp;монет</b>. В&nbsp;понедельник цену подняли на&nbsp;20&nbsp;%, во&nbsp;вторник снизили на&nbsp;20&nbsp;%. Сколько он стоит теперь?</p>
+          <div class="quiz-opts vote reveal">
+            <button class="opt" type="button" data-vote="0">Ровно 100 монет</button>
+            <button class="opt" type="button" data-vote="1">Меньше 100</button>
+            <button class="opt" type="button" data-vote="2">Больше 100</button>
+          </div>
+          <p class="quiz-why" id="voteWhy"></p>
+        </article>
+      </div>
+
+      <div class="step" data-state="trapup">
+        <article class="card">
+          <h3 class="reveal">Понедельник: +20&nbsp;%</h3>
+          <p class="reveal">Тут всё просто: один блок — одна монета. 20&nbsp;% от&nbsp;100 — это 20&nbsp;блоков сверху.</p>
+          <ol class="calc reveal">
+            <li><span class="pix piece">100 %</span><span>было <b>100&nbsp;монет</b></span></li>
+            <li><span class="pix piece">+20 %</span><span>20&nbsp;% от&nbsp;100 = <b>20</b></span></li>
+            <li class="total"><span class="pix piece">120</span><span>стало 100 + 20 = <b>120&nbsp;монет</b></span></li>
+          </ol>
+          <button class="replay pix reveal" type="button">Ещё раз</button>
+        </article>
+      </div>
+
+      <div class="step" data-state="trapdown">
+        <article class="card">
+          <h3 class="reveal">Вторник: −20&nbsp;%</h3>
+          <p class="reveal">Внимание, ловушка! Скидку считают <b>от&nbsp;новой цены</b>. Теперь 100&nbsp;% — это уже 120&nbsp;монет.</p>
+          <ol class="calc reveal">
+            <li><span class="pix piece">100 %</span><span>новое целое = <b>120</b></span></li>
+            <li><span class="pix piece">-20 %</span><span>20&nbsp;% от&nbsp;120: 10&nbsp;% = 12, значит <b>24</b></span></li>
+            <li class="total"><span class="pix piece">96</span><span>120 − 24 = <b>96&nbsp;монет</b>. Не&nbsp;100!</span></li>
+          </ol>
+          <p class="reveal muted small">Подняли на&nbsp;20&nbsp;монет, а&nbsp;сняли 24. Четыре монеты «пропали».</p>
+          <button class="replay pix reveal" type="button">Ещё раз</button>
+        </article>
+      </div>
+
+      <div class="step" data-state="trapwhy">
+        <article class="card">
+          <h3 class="reveal">Почему так?</h3>
+          <p class="reveal">Проценты всегда считаются <b>от&nbsp;чего-то</b>. +20&nbsp;% считали от&nbsp;100, а&nbsp;−20&nbsp;% — от&nbsp;120. Двадцать процентов от&nbsp;большего числа — больше. Ещё пример, наоборот:</p>
+          <ol class="calc reveal">
+            <li><span class="pix piece">-50 %</span><span>от&nbsp;100 = 50 → осталось <b>50</b></span></li>
+            <li><span class="pix piece">+50 %</span><span>от&nbsp;50 = 25 → стало <b>75</b></span></li>
+            <li class="total"><span class="pix piece">75</span><span>а&nbsp;не&nbsp;100! Проверь, что тебе продают</span></li>
+          </ol>
+          <button class="replay pix reveal" type="button">Ещё раз</button>
+        </article>
+      </div>
+
+      <div class="step" data-state="trapgame">
+        <article class="card console" id="trapgame">
+          <div class="console-head reveal">
+            <span class="pix tag">Хитрый магазин</span>
+            <span class="hint">выбери два изменения цены подряд</span>
+          </div>
+          <div class="tg-chain reveal" id="tgChain"></div>
+          <div class="tg-ops reveal">
+            <button class="pxbtn up" data-op="10" type="button">+10 %</button>
+            <button class="pxbtn up" data-op="20" type="button">+20 %</button>
+            <button class="pxbtn up" data-op="50" type="button">+50 %</button>
+            <button class="pxbtn" data-op="-10" type="button">-10 %</button>
+            <button class="pxbtn" data-op="-20" type="button">-20 %</button>
+            <button class="pxbtn" data-op="-50" type="button">-50 %</button>
+          </div>
+          <button class="replay pix reveal" id="tgReset" type="button">Начать с&nbsp;100</button>
+          <div class="quest reveal" data-quest="trapgame">
+            <div class="quest-head"><span class="pix tag gold">Задание</span><span class="pix q-step"></span></div>
+            <p class="q-text"></p>
+            <button class="pxbtn wide q-next" type="button" hidden>Следующее задание</button>
+          </div>
+        </article>
+      </div>
+
+      <div class="step" data-state="boss">
+        <article class="card console" data-quiz="boss">
+          <div class="console-head reveal">
+            <span class="pix tag gold">Финальный босс</span>
+            <span class="pix q-step"></span>
+          </div>
+          <div class="q-body"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="outro step" data-state="outro">
+      <span class="pix ch-num">Уровень пройден</span>
+      <h2 class="outro-title">Шпаргалка по&nbsp;процентам</h2>
+      <ol class="teasers cheat">
+        <li><span class="pix">1</span>Процент — это одна сотая: 1 блок из&nbsp;100.</li>
+        <li><span class="pix">2</span>50&nbsp;% — раздели на&nbsp;2, 25&nbsp;% — на&nbsp;4, 10&nbsp;% — на&nbsp;10, 1&nbsp;% — на&nbsp;100.</li>
+        <li><span class="pix">3</span>Неудобный процент собери из&nbsp;кусочков или найди 1&nbsp;% и&nbsp;умножь.</li>
+        <li><span class="pix">4</span>Скидка — вычитаем из&nbsp;цены, наценка — прибавляем. Старая цена = 100&nbsp;%.</li>
+        <li><span class="pix">5</span>Сколько процентов? Часть&nbsp;:&nbsp;целое × 100.</li>
+        <li><span class="pix">6</span>Проценты всегда «от&nbsp;чего-то»: +20&nbsp;% и&nbsp;−20&nbsp;% не&nbsp;отменяют друг друга.</li>
+      </ol>
+      <a class="pxbtn again" href="#top">Пройти заново</a>
+      <p class="credits">Остров можно крутить мышкой или пальцем.</p>
+    </section>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-sword" viewBox="0 0 16 16"></symbol></svg>
+  </main>
+
+  <script src="lib/gsap.min.js"></script>
+  <script src="lib/ScrollTrigger.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
